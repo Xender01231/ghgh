@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title %}0{% endblock %}</title>
 
     <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
 </head>
@@ -16,8 +16,6 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="bg secondory">
-        <h1 class="text-center">подвал</h1>
-    </footer>
+    {% include 'fitness/includes/footer.html' %}
 </body>
 </html>
