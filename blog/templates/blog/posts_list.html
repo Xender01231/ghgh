@@ -1,0 +1,27 @@
+{% extends "fitness/base.html" %}
+{% load static %}  
+{% block content %}create vidio{% endblock %}
+{% block content %}
+
+
+        <h1 class="text-center ">Посты</h1>
+        <div class="d-flex justify-content-center">
+            {% for post in posts %} 
+            <div class="card " style="min-width: 350px; max-width: 350px;">
+                <img src="    {{ post.images.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">    {{ post.name }}</h5>
+                <p class="card-text">    {{ post.date }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <form action="{% url 'post_like' %}" method="post" class="d-flex gap-3" >
+                        {% csrf_token %}
+                        <span>{{ post.likes }}</span>
+                        <button class="bg-transparent border-0" type="submit">
+                            <img style="width: 30px; filter: invert(0.8);" src="{% static 'blog/img/' %}">
+                        </button>
+                        <input type="hidden" name="post_id" value="{{ post.id }}">
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>

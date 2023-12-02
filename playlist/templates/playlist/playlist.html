@@ -1,0 +1,19 @@
+{% extends "fitness/base.html" %}
+{% block content %}create vidio{% endblock %}
+{% block content %}
+
+        <h1 class="text-center">Видео</h1>
+        <div class="d-flex justify-content-center">
+            {% for video in videos %} 
+            <div class="card " style="width: 18rem;">
+                <iframe src="https://www.youtube.com/embed/{{video.embed_code}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="card-body">
+                    <span>{{ video.name }}</span>
+                    <span>{{ video.price }}</span>
+                    <h5 class="card-title">{{ video.name }}</h5>
+                    <p>{{ video.date }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+{% endblock %}

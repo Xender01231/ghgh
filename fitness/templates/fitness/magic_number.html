@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1 class="text-white">магические числа</h1>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-dark">
+    <h1 class="text-white shadow-lg text-center my-3">Регестрация</h1>
+    <p class="text-white">{{result}}</p>
+    <form class="d-flex flex-column gap-1 mx-auto" style="max-width: 350px ; " action="" method="post">
+        {% csrf_token%}
+        <input class="form-control bg-secondary text-white rounded-4 fw-bold" minlength="1" type="text" placeholder="имя" name="number">
+        <Button class="btn bg-primary text-white rounded-4 fw-bold " type="submit">подтвердить</Button>
+    </form>
+</body>
+</html>

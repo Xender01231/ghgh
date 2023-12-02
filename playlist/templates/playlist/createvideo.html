@@ -1,0 +1,11 @@
+{% extends "fitness/base.html" %}
+{% block content %}create vidio{% endblock %}
+{% block content %}
+
+<h1 class="text-center">новое видео</h1>
+    <form class="justify-content-center d-flex flex-column gap-3 mx-auto" style="width: 18rem;" method="POST">{% csrf_token %}
+        <input class="form-control bg-secondary text-white rounded-4 fw-bold" type="text" placeholder=" название" name="name">
+        <input class="form-control bg-secondary text-white rounded-4 fw-bold" type="embed_code" placeholder="код вставки" name="embed_code">
+        <button class="form-control bg-primary  text-white rounded-4 fw-bold">Добавить</button>
+     </form>
+
